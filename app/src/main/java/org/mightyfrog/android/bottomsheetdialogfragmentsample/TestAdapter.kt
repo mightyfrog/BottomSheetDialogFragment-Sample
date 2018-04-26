@@ -17,14 +17,12 @@ class TestAdapter : RecyclerView.Adapter<TestAdapter.TestItem>() {
 
     override fun getItemCount() = list.size
 
-    override fun onBindViewHolder(holder: TestItem?, position: Int) {
-        holder?.apply {
-            tv.text = list[position].toString()
-        }
+    override fun onBindViewHolder(holder: TestItem, position: Int) {
+        holder.tv.text = list[position].toString()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): TestItem {
-        return LayoutInflater.from(parent?.context).inflate(R.layout.view_holder, parent, false).let {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestItem {
+        return LayoutInflater.from(parent.context).inflate(R.layout.view_holder, parent, false).let {
             TestItem(it)
         }
     }

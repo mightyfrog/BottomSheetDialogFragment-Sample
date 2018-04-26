@@ -18,7 +18,7 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     override fun setupDialog(dialog: Dialog?, style: Int) {
         dialog?.apply {
             setContentView(R.layout.bottom_sheet)
-            recyclerView.layoutManager = LinearLayoutManager(dialog.context)
+            recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.adapter = TestAdapter()
         }
     }
