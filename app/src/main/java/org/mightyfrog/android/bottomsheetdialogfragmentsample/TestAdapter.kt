@@ -22,9 +22,7 @@ class TestAdapter : RecyclerView.Adapter<TestAdapter.TestItem>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestItem {
-        return LayoutInflater.from(parent.context).inflate(R.layout.view_holder, parent, false).let {
-            TestItem(it)
-        }
+        return TestItem(LayoutInflater.from(parent.context).inflate(R.layout.view_holder, parent, false))
     }
 
     class TestItem(view: View) : RecyclerView.ViewHolder(view) {
